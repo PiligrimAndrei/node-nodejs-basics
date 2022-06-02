@@ -6,12 +6,13 @@ import path from 'path';
 export const create = async () => {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
-    fs.access(path.resolve(__dirname, 'files', 'fresh.txt'), (err) => {
+
+    filePass = path.resolve(__dirname, 'files', 'fresh.txt')
+    fs.access(filePass, (err) => {
         if (err) {
             throw Error;
         } else {
-            const writableStream = fs.createWriteStream(path.resolve(__dirname, 'files', 'fresh.txt'))
-            console.log(path.resolve(__dirname, 'files', 'fresh.txt'))
+            const writableStream = fs.createWriteStream(filePass)
             writableStream.write('I am fresh and young');
         }
     })
