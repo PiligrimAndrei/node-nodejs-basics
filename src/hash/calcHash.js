@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import fsPromises from 'fs/promises';
 import crypto from 'crypto';
-import { hasUncaughtExceptionCaptureCallback } from 'process';
+
 
 export const calculateHash = async () => {
     const __filename = fileURLToPath(import.meta.url);
