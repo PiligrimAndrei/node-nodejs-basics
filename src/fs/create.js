@@ -10,10 +10,10 @@ export const create = async () => {
     filePass = path.resolve(__dirname, 'files', 'fresh.txt')
     fs.access(filePass, (err) => {
         if (err) {
-            throw Error;
-        } else {
             const writableStream = fs.createWriteStream(filePass)
             writableStream.write('I am fresh and young');
+        } else {
+            throw Error;
         }
     })
 }
